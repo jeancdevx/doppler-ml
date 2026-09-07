@@ -1,0 +1,17 @@
+corpus,label,n
+lssiren,road_noise,902
+lssiren,siren,932
+sirennet,ambulance,400
+sirennet,firetruck,400
+sirennet,police,454
+sirennet,traffic,421
+urbansound8k,air_conditioner,1000
+urbansound8k,car_horn,429
+urbansound8k,children_playing,1000
+urbansound8k,dog_bark,1000
+urbansound8k,drilling,1000
+urbansound8k,engine_idling,1000
+urbansound8k,gun_shot,374
+urbansound8k,jackhammer,1000
+urbansound8k,siren,929
+urbansound8k,street_music,1000

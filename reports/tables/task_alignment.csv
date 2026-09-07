@@ -1,0 +1,4 @@
+task,train,test_internal,test_external
+deteccion_binaria,sireNNet (sirena vs traffic),holdout sireNNet,LSSiren; UrbanSound8K siren vs resto
+tipo_multiclase,sireNNet (ambulance/police/firetruck),holdout sireNNet agrupado,AudioSet-EV eval (fase posterior)
+distractores_duros,UrbanSound8K no-siren (folds 1-8),folds 9-10,LSSiren road_noise
