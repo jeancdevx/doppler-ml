@@ -1,0 +1,14 @@
+librosa>=0.10.2
+soundfile>=0.12.1
+audioread>=3.0.1
+numpy>=1.26
+pandas>=2.2
+matplotlib>=3.8
+seaborn>=0.13
+scipy>=1.11
+jupyter>=1.0
+nbformat>=5.10
+nbclient>=0.10
+ipykernel>=6.29
+tqdm>=4.66
+requests>=2.32
