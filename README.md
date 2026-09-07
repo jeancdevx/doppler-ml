@@ -1,7 +1,5 @@
 # Sistema de Reconocimiento Acústico de Vehículos de Emergencia para Vehículos Autónomos
 
-Proyecto **Doppler**. El desarrollo experimental se realiza en Kaggle; el código y el informe viven en este repositorio.
-
 ## Resumen Ejecutivo
 
 Este proyecto propone un sistema de reconocimiento acústico basado en aprendizaje automático (ML) para detectar y clasificar vehículos de emergencia en aproximación mediante el sonido de sus sirenas. El objetivo es que un vehículo autónomo pueda identificar patrones de sirena asociados a ambulancias, bomberos o patrullas policiales **antes** de que el emisor sea visible para las cámaras, aumentando el tiempo de reacción y mejorando la seguridad vial. En entornos urbanos congestionados, ese retraso puede afectar de forma crítica la llegada de servicios de emergencia.
@@ -28,7 +26,7 @@ El problema específico es diseñar un sistema de detección acústica en tiempo
 
 El reto técnico es la variabilidad del audio. Las sirenas cambian de patrón (hi-lo, wail, yelp) según el país y, a veces, según el modo operativo del mismo vehículo (Zhong, Gu, Prieto y Fehler, 2025). El audio urbano es ruidoso y no estacionario; el modelo debe generalizar a grabaciones no vistas (Mittal y Chawla, 2023) y ser robusto a volumen, reverberación, Doppler y ruido de fondo.
 
-**Limitación acústica del tipo de vehículo.** En muchos países policía, ambulancia y bomberos comparten el mismo hardware de sirena. Clasificar “tipo de vehículo” a partir del audio no equivale a identificar visualmente el vehículo: el modelo aprende el patrón acústico asociado a la *etiqueta de origen del dataset*. El solapamiento entre clases es un riesgo real y se trata como tal en los criterios de éxito y en el análisis de datos.
+**Limitación acústica del tipo de vehículo.** En muchos países policía, ambulancia y bomberos comparten el mismo hardware de sirena. Clasificar “tipo de vehículo” a partir del audio no equivale a identificar visualmente el vehículo: el modelo aprende el patrón acústico asociado a la _etiqueta de origen del dataset_. El solapamiento entre clases es un riesgo real y se trata como tal en los criterios de éxito y en el análisis de datos.
 
 Las características (STFT, log-mel, MFCC) alimentan un modelo supervisado. La literatura reciente usa CNN residuales y redes preentrenadas de etiquetado de audio (PANNs) con buenos resultados; este proyecto **compara** arquitecturas en lugar de fijar una de antemano. La latencia de interés se descompone en latencia algorítmica (tamaño de la ventana de análisis, del orden de 1–2 s) y latencia de cómputo (inferencia por ventana). El umbral de 250 ms aplica a la inferencia, no a “detectar en el primer milisegundo de sirena”.
 
@@ -39,7 +37,7 @@ En síntesis, el problema es anticipar la presencia de vehículos de emergencia 
 1. **Detectar presencia de sirena** en ventanas de audio del entorno (tarea binaria sirena vs ruido urbano).
 2. **Clasificar el tipo etiquetado** (ambulancia / policía / bomberos) cuando hay sirena, con la limitación acústica descrita: no se afirma identificación visual del vehículo.
 3. **Preprocesar audio y extraer características**: normalización, mono, resample, STFT, log-mel, MFCC y descriptores espectrales (ZCR, centroide, bandwidth, rolloff).
-4. **Comparar modelos supervisados** (CNN sobre mapas 2D, y al menos una alternativa RNN u otra CNN) y elegir el mejor *trade-off* detección/tipo. La CNN residual es una hipótesis de trabajo, no un resultado previo.
+4. **Comparar modelos supervisados** (CNN sobre mapas 2D, y al menos una alternativa RNN u otra CNN) y elegir el mejor _trade-off_ detección/tipo. La CNN residual es una hipótesis de trabajo, no un resultado previo.
 5. **Definir una interfaz modular de salida** (`event=siren_detected`, `class`, `confidence`, `timestamp`) consumible por un controlador hipotético. No forma parte del alcance de esta fase el control real de un vehículo ni de semáforos.
 6. **Validar generalización en un corpus externo** (distinta fuente de grabación: p. ej. entrenar en sireNNet y evaluar detección en LSSiren o UrbanSound8K), no solo un split aleatorio del mismo conjunto.
 
@@ -64,16 +62,16 @@ No existe un único dataset que cubra a la vez (a) las cuatro clases del problem
 
 El inventario de fuentes se resume así. El detalle de licencias, conteos verificados y rutas está en los notebooks `01`–`03` y en las tablas de `reports/tables/`.
 
-| Corpus | Rol en Doppler | Contenido nominal | Licencia | Fuente |
-| --- | --- | --- | --- | --- |
-| **sireNNet** | Primario 4 clases (detección + tipo) | 400 ambulancia, 454 policía, 400 bomberos, 421 tráfico (~1 675 WAV, ~3 s, 44.1 kHz) | CC BY 4.0 | Mendeley Data, 10.17632/j4ydzzv4kb.1 (Shah y Singh, 2023) |
-| **LSSiren** | Detección binaria in-the-wild / prueba externa | 900 sirena + 900 ruido vial, 3–15 s | CC BY 4.0 | Figshare / *Scientific Data*, 10.6084/m9.figshare.19291472 (Asif et al., 2022) |
-| **UrbanSound8K** | Distractores urbanos y sirena genérica | 8 732 clips, 10 clases (incl. ~929 `siren`, `car_horn`, `jackhammer`, etc.) | CC BY-NC 4.0 (uso académico) | Zenodo 10.5281/zenodo.1203745 (Salamon, Jacoby y Bello, 2014) |
-| **AudioSet-EV v2** | Escala / entrenamiento posterior | ~7 900 positivos (policía, ambulancia, bomberos) + ~20 916 negativos urbanos, clips 10 s a 32 kHz | investigación / subset de AudioSet-YouTube | Zenodo 10.5281/zenodo.18668076 (Giacomelli y Rinaldi, 2025) |
+| Corpus             | Rol en Doppler                                 | Contenido nominal                                                                                 | Licencia                                   | Fuente                                                                         |
+| ------------------ | ---------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------ | ------------------------------------------------------------------------------ |
+| **sireNNet**       | Primario 4 clases (detección + tipo)           | 400 ambulancia, 454 policía, 400 bomberos, 421 tráfico (~1 675 WAV, ~3 s, 44.1 kHz)               | CC BY 4.0                                  | Mendeley Data, 10.17632/j4ydzzv4kb.1 (Shah y Singh, 2023)                      |
+| **LSSiren**        | Detección binaria in-the-wild / prueba externa | 900 sirena + 900 ruido vial, 3–15 s                                                               | CC BY 4.0                                  | Figshare / _Scientific Data_, 10.6084/m9.figshare.19291472 (Asif et al., 2022) |
+| **UrbanSound8K**   | Distractores urbanos y sirena genérica         | 8 732 clips, 10 clases (incl. ~929 `siren`, `car_horn`, `jackhammer`, etc.)                       | CC BY-NC 4.0 (uso académico)               | Zenodo 10.5281/zenodo.1203745 (Salamon, Jacoby y Bello, 2014)                  |
+| **AudioSet-EV v2** | Escala / entrenamiento posterior               | ~7 900 positivos (policía, ambulancia, bomberos) + ~20 916 negativos urbanos, clips 10 s a 32 kHz | investigación / subset de AudioSet-YouTube | Zenodo 10.5281/zenodo.18668076 (Giacomelli y Rinaldi, 2025)                    |
 
 **Por qué no un solo archivo de Kaggle.** El dataset popular [vishnu0399/emergency-vehicle-siren-sounds](https://www.kaggle.com/datasets/vishnu0399/emergency-vehicle-siren-sounds) tiene 600 clips de 3 s (ambulancia, bomberos, tráfico) y **no incluye policía**, así que no cubre el objetivo de tipo. ESC-50 aporta solo ~40 sirenas genéricas. FSD50K tiene etiquetas de sirena/ambulancia/policía demasiado escasas e inconsistentes para entrenar. AudioSet-EV v2 es el corpus científico más sólido del dominio (taxonomía AudioSet, distractores, splits `balanced_train`/`eval`/`unbalanced`, usado por E2PANNs), pero pesa ~8–16 GB comprimido y ~28 GB en WAV: se reserva para entrenamiento, no para la exploración inicial.
 
-**Naturaleza de los datos.** El audio crudo es **no estructurado** (formas de onda). Tras el inventario se vuelve **semiestructurado**: cada clip se describe con ruta, corpus, etiqueta, duración, sample rate, canales y, más adelante, vectores MFCC / mapas log-mel. sireNNet y LSSiren son de clase única por archivo (single-label); AudioSet-EV admite multi-etiqueta (un clip puede ser policía+ambulancia). UrbanSound8K es single-label con *folds* oficiales y varios slices del mismo `fsID` (mismo recording), lo que obliga a no partir aleatoriamente.
+**Naturaleza de los datos.** El audio crudo es **no estructurado** (formas de onda). Tras el inventario se vuelve **semiestructurado**: cada clip se describe con ruta, corpus, etiqueta, duración, sample rate, canales y, más adelante, vectores MFCC / mapas log-mel. sireNNet y LSSiren son de clase única por archivo (single-label); AudioSet-EV admite multi-etiqueta (un clip puede ser policía+ambulancia). UrbanSound8K es single-label con _folds_ oficiales y varios slices del mismo `fsID` (mismo recording), lo que obliga a no partir aleatoriamente.
 
 **Sesgos de origen que hay que declarar desde el principio.**
 
@@ -90,7 +88,7 @@ El flujo es reproducible y el mismo en local y en Kaggle:
 2. Dejar cada corpus en `data/raw/{sirennet,lssiren,urbansound8k}` en local, o bajo `/kaggle/input/<slug>/` en Kaggle. `src/paths.py` resuelve ambos.
 3. Inventariar archivos (`src/inventory.py`): etiqueta, tarea, ruta. UrbanSound8K usa el CSV oficial (`fold`, `fsID`, `class`).
 4. No mezclar corpora en un único split de entrenamiento sin declarar el origen. El protocolo previsto es: **entrenar tipo y detección en sireNNet**; **probar detección en LSSiren**; usar UrbanSound8K como distractores / sirena genérica con los 10 folds oficiales (nunca mezclar slices del mismo `fsID` entre train y test).
-5. Normalización posterior (no se altera el WAV crudo en esta fase): mono, resample a 22 050 Hz para características, ventanas de análisis fijas. El EDA mide primero sample rate y duración *nativos*.
+5. Normalización posterior (no se altera el WAV crudo en esta fase): mono, resample a 22 050 Hz para características, ventanas de análisis fijas. El EDA mide primero sample rate y duración _nativos_.
 
 Instrucciones de montaje: [data/README.md](data/README.md). Notebooks: [notebooks/README.md](notebooks/README.md).
 
@@ -98,18 +96,18 @@ Instrucciones de montaje: [data/README.md](data/README.md). Notebooks: [notebook
 
 La exploración se ejecuta en [`notebooks/02_exploracion.ipynb`](notebooks/02_exploracion.ipynb). En esta fase se montó **sireNNet completo** (1 675 WAV), las **tablas de características de LSSiren** (sin WAV; los zip de ~2.3 GB están disponibles con el script de descarga) y el **CSV oficial de UrbanSound8K**. Conteos verificados:
 
-| Corpus | Clase | n | Notas |
-| --- | --- | ---: | --- |
-| sireNNet | ambulance | 400 | WAV, 44.1 kHz, estéreo, ~3.00 s |
-| sireNNet | firetruck | 400 | igual |
-| sireNNet | police | 454 | clase más numerosa |
-| sireNNet | traffic | 421 | negativa para detección |
-| LSSiren (CSV) | siren | 932 | paper reporta 900; el CSV público trae 932 filas |
-| LSSiren (CSV) | road_noise | 902 | paper reporta 900 |
-| UrbanSound8K | siren | 929 slices / **74 recordings** | ~12.6 slices por grabación |
-| UrbanSound8K | car_horn | 429 / 125 rec. | distractor duro |
-| UrbanSound8K | jackhammer, drilling, engine_idling, … | 1 000 c/u | distractores urbanos |
-| UrbanSound8K | gun_shot | 374 / 117 rec. | minoritaria |
+| Corpus        | Clase                                  |                              n | Notas                                            |
+| ------------- | -------------------------------------- | -----------------------------: | ------------------------------------------------ |
+| sireNNet      | ambulance                              |                            400 | WAV, 44.1 kHz, estéreo, ~3.00 s                  |
+| sireNNet      | firetruck                              |                            400 | igual                                            |
+| sireNNet      | police                                 |                            454 | clase más numerosa                               |
+| sireNNet      | traffic                                |                            421 | negativa para detección                          |
+| LSSiren (CSV) | siren                                  |                            932 | paper reporta 900; el CSV público trae 932 filas |
+| LSSiren (CSV) | road_noise                             |                            902 | paper reporta 900                                |
+| UrbanSound8K  | siren                                  | 929 slices / **74 recordings** | ~12.6 slices por grabación                       |
+| UrbanSound8K  | car_horn                               |                 429 / 125 rec. | distractor duro                                  |
+| UrbanSound8K  | jackhammer, drilling, engine_idling, … |                      1 000 c/u | distractores urbanos                             |
+| UrbanSound8K  | gun_shot                               |                 374 / 117 rec. | minoritaria                                      |
 
 **Homogeneidad de sireNNet.** Los 1 675 WAV tienen sample rate **44 100 Hz**, **2 canales** y duración **3.000–3.019 s** (casi un delta en 3.000 s). Eso es típico de un corpus recortado, normalizado y aumentado: excelente para tensores fijos de CNN, peligroso si se interpreta como diversidad acústica real.
 
@@ -117,7 +115,7 @@ La exploración se ejecuta en [`notebooks/02_exploracion.ipynb`](notebooks/02_ex
 
 ![Duración de sireNNet: prácticamente 3 s fijos](reports/figures/duration_hist.png)
 
-**UrbanSound8K y fuga de información.** La clase `siren` no es 929 grabaciones independientes: son 929 *slices* de 74 fuentes (`fsID`). `jackhammer` es aún más extremo (1 000 slices / 45 recordings). Un `train_test_split` aleatorio por archivo filtraría el mismo evento a ambos lados. El protocolo correcto es respetar los 10 folds oficiales y, en cualquier corpus, agrupar por grabación.
+**UrbanSound8K y fuga de información.** La clase `siren` no es 929 grabaciones independientes: son 929 _slices_ de 74 fuentes (`fsID`). `jackhammer` es aún más extremo (1 000 slices / 45 recordings). Un `train_test_split` aleatorio por archivo filtraría el mismo evento a ambos lados. El protocolo correcto es respetar los 10 folds oficiales y, en cualquier corpus, agrupar por grabación.
 
 ![Conteos UrbanSound8K](reports/figures/urbansound8k_class_counts.png)
 
@@ -131,17 +129,17 @@ Variables de inventario: `corpus`, `label`, `task`, `duration_s`, `sr`, `n_chann
 
 Medias de descriptores (muestra):
 
-| Clase | ZCR | Centroide (Hz) | Bandwidth (Hz) | Rolloff (Hz) |
-| --- | ---: | ---: | ---: | ---: |
-| ambulance | 0.119 | 1 962 | 1 881 | 3 309 |
-| firetruck | 0.144 | 2 457 | 2 246 | 4 616 |
-| police | 0.097 | 1 774 | 1 764 | 3 055 |
-| traffic | 0.077 | 1 670 | 2 000 | 3 278 |
+| Clase     |   ZCR | Centroide (Hz) | Bandwidth (Hz) | Rolloff (Hz) |
+| --------- | ----: | -------------: | -------------: | -----------: |
+| ambulance | 0.119 |          1 962 |          1 881 |        3 309 |
+| firetruck | 0.144 |          2 457 |          2 246 |        4 616 |
+| police    | 0.097 |          1 774 |          1 764 |        3 055 |
+| traffic   | 0.077 |          1 670 |          2 000 |        3 278 |
 
 Lectura operativa:
 
 - **Sirena vs tráfico.** El tráfico tiene menor ZCR medio (0.077 vs 0.12 en sirenas agregadas) y **mucha más dispersión** de centroide (std 669 Hz vs 290–408 Hz en tipos de sirena): el negativo es heterogéneo; las sirenas son más tonales y estables.
-- **Tipo.** Bomberos se separan hacia frecuencias más altas (centroide 2 457 Hz, rolloff 4 616 Hz). Ambulancia y policía se solapan en centroide/rolloff; el STFT sugiere que la diferencia está más en la *modulación temporal* (wail vs yelp) que en un timbre estático.
+- **Tipo.** Bomberos se separan hacia frecuencias más altas (centroide 2 457 Hz, rolloff 4 616 Hz). Ambulancia y policía se solapan en centroide/rolloff; el STFT sugiere que la diferencia está más en la _modulación temporal_ (wail vs yelp) que en un timbre estático.
 - **MFCC.** Los coeficientes 1–3 concentran la separación; a partir del 4 las curvas de los tres tipos de sirena convergen. El tráfico se aparta sobre todo en MFCC-2 y MFCC-3. Promediar MFCC en el tiempo **borra** el yelp/wail, que sí permanece en el mapa log-mel.
 
 ![Descriptores espectrales por clase](reports/figures/descriptors_by_class.png)
