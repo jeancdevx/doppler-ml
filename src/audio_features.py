@@ -27,12 +27,41 @@ except Exception:
 
 
 TARGET_SR = 22050
+AUDIOSET_DURATION_S = 10.0
 
 
 @dataclass
 class AudioClip:
     y: np.ndarray
     sr: int
+
+
+def peak_normalize(y: np.ndarray, peak: float = 0.99) -> np.ndarray:
+    y = np.asarray(y, dtype=np.float32)
+    max_abs = float(np.max(np.abs(y))) if y.size else 0.0
+    if max_abs < 1e-8:
+        return y
+    return (y / max_abs) * peak
+
+
+def rms_normalize(y: np.ndarray, target_rms: float = 0.1) -> np.ndarray:
+    y = np.asarray(y, dtype=np.float32)
+    rms = float(np.sqrt(np.mean(np.square(y)))) if y.size else 0.0
+    if rms < 1e-8:
+        return y
+    return y * (target_rms / rms)
+
+
+def pad_or_trim(y: np.ndarray, sr: int, duration_s: float) -> np.ndarray:
+    y = np.asarray(y, dtype=np.float32)
+    n = int(round(duration_s * sr))
+    if n <= 0:
+        return y
+    if len(y) >= n:
+        return y[:n]
+    out = np.zeros(n, dtype=np.float32)
+    out[: len(y)] = y
+    return out
 
 
 def load_audio(path: str, sr: int = TARGET_SR, duration: float | None = None) -> AudioClip:

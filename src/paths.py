@@ -28,6 +28,12 @@ KAGGLE_SLUGS = {
         "urban-sound-8k",
         "urbansound8k-dataset",
     ),
+    "audioset_ev": (
+        "audioset_ev",
+        "audioset-ev",
+        "audioset_ev_v2",
+        "audioset-ev-v2",
+    ),
 }
 
 
@@ -99,10 +105,18 @@ def _looks_like_urbansound8k(path: Path) -> bool:
         return False
 
 
+def _looks_like_audioset_ev(path: Path) -> bool:
+    names = _dir_names(path)
+    if "positive_files" in names or "ev_positives.csv" in names:
+        return True
+    return (path / "EV_Positives.csv").exists() or (path / "Positive_files").is_dir()
+
+
 SIGNATURES = {
     "sirennet": _looks_like_sirennet,
     "lssiren": _looks_like_lssiren,
     "urbansound8k": _looks_like_urbansound8k,
+    "audioset_ev": _looks_like_audioset_ev,
 }
 
 
@@ -152,12 +166,14 @@ class CorpusPaths:
     sirennet: Path | None
     lssiren: Path | None
     urbansound8k: Path | None
+    audioset_ev: Path | None
 
     def available(self) -> dict[str, Path]:
         found = {
             "sirennet": self.sirennet,
             "lssiren": self.lssiren,
             "urbansound8k": self.urbansound8k,
+            "audioset_ev": self.audioset_ev,
         }
         return {key: path for key, path in found.items() if path is not None}
 
@@ -167,4 +183,5 @@ def corpus_paths() -> CorpusPaths:
         sirennet=resolve_corpus("sirennet"),
         lssiren=resolve_corpus("lssiren"),
         urbansound8k=resolve_corpus("urbansound8k"),
+        audioset_ev=resolve_corpus("audioset_ev"),
     )
