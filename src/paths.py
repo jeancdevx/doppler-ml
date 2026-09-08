@@ -64,19 +64,87 @@ def _first_existing(candidates: list[Path]) -> Path | None:
     return None
 
 
+def _input_dirs() -> list[Path]:
+    root = data_root()
+    if not root.exists():
+        return []
+    return [p for p in root.iterdir() if p.is_dir()]
+
+
+def _dir_names(path: Path) -> set[str]:
+    try:
+        return {p.name.lower() for p in path.iterdir()}
+    except OSError:
+        return set()
+
+
+def _looks_like_sirennet(path: Path) -> bool:
+    names = _dir_names(path)
+    return {"ambulance", "police"}.issubset(names) or {"ambulance", "firetruck", "traffic"}.issubset(names)
+
+
+def _looks_like_lssiren(path: Path) -> bool:
+    names = _dir_names(path)
+    if "ambulance_final.csv" in names or "road_final.csv" in names:
+        return True
+    return any("emergency" in n and "siren" in n for n in names) or "road noises" in names
+
+
+def _looks_like_urbansound8k(path: Path) -> bool:
+    if (path / "UrbanSound8K.csv").exists() or (path / "metadata" / "UrbanSound8K.csv").exists():
+        return True
+    try:
+        return any(p.name == "UrbanSound8K.csv" for p in path.rglob("UrbanSound8K.csv"))
+    except OSError:
+        return False
+
+
+SIGNATURES = {
+    "sirennet": _looks_like_sirennet,
+    "lssiren": _looks_like_lssiren,
+    "urbansound8k": _looks_like_urbansound8k,
+}
+
+
 def resolve_corpus(name: str) -> Path | None:
     """Devuelve el directorio del corpus si está montado."""
-    root = data_root()
     slugs = KAGGLE_SLUGS[name]
-    candidates: list[Path] = []
+    slug_candidates: list[Path] = []
     if is_kaggle():
         for slug in slugs:
-            candidates.append(root / slug)
+            slug_candidates.append(KAGGLE_INPUT / slug)
+        datasets = KAGGLE_INPUT / "datasets"
+        if datasets.exists():
+            for user_dir in datasets.iterdir():
+                if not user_dir.is_dir():
+                    continue
+                for slug in slugs:
+                    slug_candidates.append(user_dir / slug)
+                    slug_candidates.append(user_dir / slug / slug)
+        for ds in _input_dirs():
+            slug_candidates.append(ds / name)
+            for slug in slugs:
+                slug_candidates.append(ds / slug)
     else:
-        candidates.append(LOCAL_RAW / name)
+        slug_candidates.append(LOCAL_RAW / name)
         for slug in slugs:
-            candidates.append(LOCAL_RAW / slug)
-    return _first_existing(candidates)
+            slug_candidates.append(LOCAL_RAW / slug)
+
+    existing = [path for path in slug_candidates if path.exists()]
+    if existing:
+        return max(existing, key=lambda path: len(path.parts))
+
+    for ds in _input_dirs():
+        if SIGNATURES[name](ds):
+            return ds
+        try:
+            children = list(ds.iterdir())
+        except OSError:
+            children = []
+        for child in children:
+            if child.is_dir() and SIGNATURES[name](child):
+                return child
+    return None
 
 
 @dataclass(frozen=True)
