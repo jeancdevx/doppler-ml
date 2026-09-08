@@ -18,12 +18,12 @@ Convenciones para los notebooks de exploración. El entorno de ejecución previs
 
 ## Datos
 
-Ver [data/README.md](../data/README.md). El helper `src/paths.py` busca:
+Ver [data/README.md](../data/README.md). El helper de la primera celda busca:
 
-| Corpus | Local | Kaggle input slug |
+| Corpus | Local | Kaggle |
 | --- | --- | --- |
-| sireNNet | `data/raw/sirennet` | `sirennet` |
-| LSSiren | `data/raw/lssiren` | `lssiren` |
-| UrbanSound8K | `data/raw/urbansound8k` | `urbansound8k` |
+| sireNNet | `data/raw/sirennet` | `/kaggle/input/datasets/<user>/sirennet/sirennet` o `/kaggle/input/sirennet` |
+| LSSiren | `data/raw/lssiren` | `/kaggle/input/datasets/<user>/lssiren/lssiren` |
+| UrbanSound8K | `data/raw/urbansound8k` | `/kaggle/input/datasets/<user>/urbansound8k/urbansound8k` |
 
-En Kaggle, añade los tres datasets al Kernel y ejecuta los notebooks en orden.
+En Kaggle, añade los tres datasets al Kernel (`sirennet`, `lssiren`, `urbansound8k`) y ejecuta los notebooks en orden. La primera celda elige `DATA_ROOT` (`data/raw` en local, `/kaggle/input` en Kaggle). No hace falta subir `src/`.
