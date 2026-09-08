@@ -20,3 +20,7 @@ skills-lock.json
 reports/tables/file_inventory.csv
 reports/tables/wav_probe.csv
 reports/tables/sirennet_feature_sample.csv
+reports/tables/audioset_ev_clean_index.csv
+reports/tables/audioset_ev_feature_sample.csv
+reports/tables/audioset_ev_index.csv
+.jupyter/
