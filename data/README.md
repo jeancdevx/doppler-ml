@@ -31,9 +31,12 @@ AudioSet-EV v2 ([Zenodo 10.5281/zenodo.18668076](https://doi.org/10.5281/zenodo.
 
 ## Kaggle
 
-1. Crear datasets (privados o públicos) a partir de `data/raw/sirennet`, `data/raw/lssiren` y `data/raw/urbansound8k`.
-2. UrbanSound8K también puede añadirse desde el catálogo de Kaggle si ya existe una copia (`urbansound8k`).
-3. En el Kernel: **Add data** con slugs `sirennet`, `lssiren`, `urbansound8k`.
-4. Subir los tres notebooks. Los paths se resuelven solos vía `src/paths.py`.
+Los notebooks no importan el paquete `src`. La primera celda solo fija rutas:
 
-Si Kaggle no monta el directorio `src/`, copia `paths.py` a la primera celda o añade el repo como dataset auxiliar.
+- local: `data/raw/<corpus>`
+- Kaggle: `/kaggle/input/datasets/<user>/<slug>/<slug>` (p. ej. `/kaggle/input/datasets/jeancdevx/sirennet/sirennet`), y también `/kaggle/input/<slug>` si el Input es plano
+- salidas: `reports/` en local, `/kaggle/working/reports/` en Kaggle
+
+1. Añade esos tres datasets como Input.
+2. Sube de nuevo los `.ipynb` del repo (tira la copia con el zip en base64).
+3. Ejecuta de arriba abajo.
