@@ -1,0 +1,6 @@
+polarity,segment_type,n
+negative,balanced_train,10963
+negative,eval,9953
+positive,balanced_train,124
+positive,eval,127
+positive,unbalanced_train,7073

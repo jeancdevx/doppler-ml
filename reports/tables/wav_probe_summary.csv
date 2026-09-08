@@ -1,5 +1,0 @@
-corpus,label,n,duration_median,duration_mean,sr_median,channels_mean
-sirennet,ambulance,400,3.000090702947846,3.0018979591836734,44100.0,2.0
-sirennet,firetruck,400,3.000090702947846,3.00202947845805,44100.0,2.0
-sirennet,police,454,3.000045351473923,3.000045351473923,44100.0,2.0
-sirennet,traffic,421,3.0,3.0,44100.0,2.0

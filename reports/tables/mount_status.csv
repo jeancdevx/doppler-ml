@@ -1,4 +1,5 @@
 corpus,status,root,n_rows
+audioset_ev,ok,/home/jeancdevx/dev/doppler/doppler-ml/data/raw/audioset_ev,28240
 sirennet,ok,/home/jeancdevx/dev/doppler/doppler-ml/data/raw/sirennet,1675
 lssiren,ok,/home/jeancdevx/dev/doppler/doppler-ml/data/raw/lssiren,1834
 urbansound8k,ok,/home/jeancdevx/dev/doppler/doppler-ml/data/raw/urbansound8k,8732

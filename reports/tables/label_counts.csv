@@ -1,4 +1,10 @@
 corpus,label,n
+audioset_ev,ambulance,934
+audioset_ev,firetruck,2562
+audioset_ev,multi,829
+audioset_ev,police,2427
+audioset_ev,siren_untyped,572
+audioset_ev,urban_negative,20916
 lssiren,road_noise,902
 lssiren,siren,932
 sirennet,ambulance,400
