@@ -1,0 +1,17 @@
+path,speed_mps,snr_db,sr,engine,duration_s
+/kaggle/working/recsir_demo/recsir_v5_snr-10.wav,5.0,-10.0,8000,pyroadacoustics,8.0
+/kaggle/working/recsir_demo/recsir_v5_snr-5.wav,5.0,-5.0,8000,pyroadacoustics,8.0
+/kaggle/working/recsir_demo/recsir_v5_snr0.wav,5.0,0.0,8000,pyroadacoustics,8.0
+/kaggle/working/recsir_demo/recsir_v5_snr10.wav,5.0,10.0,8000,pyroadacoustics,8.0
+/kaggle/working/recsir_demo/recsir_v15_snr-10.wav,15.0,-10.0,8000,pyroadacoustics,2.666625
+/kaggle/working/recsir_demo/recsir_v15_snr-5.wav,15.0,-5.0,8000,pyroadacoustics,2.666625
+/kaggle/working/recsir_demo/recsir_v15_snr0.wav,15.0,0.0,8000,pyroadacoustics,2.666625
+/kaggle/working/recsir_demo/recsir_v15_snr10.wav,15.0,10.0,8000,pyroadacoustics,2.666625
+/kaggle/working/recsir_demo/recsir_v30_snr-10.wav,30.0,-10.0,8000,pyroadacoustics,1.333375
+/kaggle/working/recsir_demo/recsir_v30_snr-5.wav,30.0,-5.0,8000,pyroadacoustics,1.333375
+/kaggle/working/recsir_demo/recsir_v30_snr0.wav,30.0,0.0,8000,pyroadacoustics,1.333375
+/kaggle/working/recsir_demo/recsir_v30_snr10.wav,30.0,10.0,8000,pyroadacoustics,1.333375
+/kaggle/working/recsir_demo/recsir_v40_snr-10.wav,40.0,-10.0,8000,pyroadacoustics,1.0
+/kaggle/working/recsir_demo/recsir_v40_snr-5.wav,40.0,-5.0,8000,pyroadacoustics,1.0
+/kaggle/working/recsir_demo/recsir_v40_snr0.wav,40.0,0.0,8000,pyroadacoustics,1.0
+/kaggle/working/recsir_demo/recsir_v40_snr10.wav,40.0,10.0,8000,pyroadacoustics,1.0

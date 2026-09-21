@@ -1,5 +1,7 @@
-corpus,status,root,n_rows
-audioset_ev,ok,/home/jeancdevx/dev/doppler/doppler-ml/data/raw/audioset_ev,28240
-sirennet,ok,/home/jeancdevx/dev/doppler/doppler-ml/data/raw/sirennet,1675
-lssiren,ok,/home/jeancdevx/dev/doppler/doppler-ml/data/raw/lssiren,1834
-urbansound8k,ok,/home/jeancdevx/dev/doppler/doppler-ml/data/raw/urbansound8k,8732
+corpus,estado,ruta,n_audio
+lssiren,montado,/kaggle/input/datasets/jeancdevx/lssiren,1834
+sirennet,montado,/kaggle/input/datasets/jeancdevx/sirennet,1675
+audioset_ev,montado,/kaggle/input/datasets/jeancdevx/audioset-ev,28816
+urbansound8k,montado,/kaggle/input/datasets/jeancdevx/urbansound8k,8732
+sonyc_ust,montado,/kaggle/input/datasets/jeancdevx/sonyc-ust,18510
+esc50,montado,/kaggle/input/datasets/jeancdevx/esc-50,2000
