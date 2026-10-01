@@ -18,3 +18,4 @@ tmp/
 output/
 skills-lock.json
 .jupyter/
+reports/
