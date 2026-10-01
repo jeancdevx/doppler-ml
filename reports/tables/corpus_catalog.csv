@@ -1,9 +1,0 @@
-dataset,licencia,cantidad,tamano,url,rol_en_el_corpus,estado_sesion
-LSSiren (Large-Scale Audio Dataset for Emergency Vehicle Sirens and Road Noises),CC0 (Figshare); artículo Scientific Data en CC BY 4.0,"1 800 WAV (900 sirena / 900 ruido), 3–15 s",~2.3 GB zip / ~2.7 GB audio,https://doi.org/10.6084/m9.figshare.19291472,Positivos/negativos reales; test OOD binario,True
-sireNNet — Emergency Vehicle Siren Classification,CC BY 4.0,"1 675 clips (Ambulance 400, Police 454, Firetruck 400, Traffic 421)",~0.8 GB,https://data.mendeley.com/datasets/j4ydzzv4kb/1,Multiclase (tipo de vehículo); OOD opcional,True
-AudioSet-EV v2,CC BY-SA 4.0 (metadatos/curaduría) + ToS de YouTube (clips),7 900 positivos + 20 916 negativos; WAV mono 32 kHz ~10 s,16.2 GB zip / ~28 GB extraído,https://doi.org/10.5281/zenodo.18668076,Entrenamiento principal binario y 4 vías (police/ambulance/fire/neg),True
-UrbanSound8K,CC BY-NC 3.0 (uso académico no comercial),"8 732 clips ≤4 s, 10 clases (siren = 929 slices / ~74 grabaciones)",6.0 GB,https://doi.org/10.5281/zenodo.1203745,Negativos urbanos y distractores; la clase siren NO es EV,True
-SONYC-UST v2.3,CC BY 4.0,18 515 grabaciones de 10 s (Nueva York),13.3 GB,https://doi.org/10.5281/zenodo.3966543,Ruido de fondo para mezclas SNR; podar siren/alarm,True
-ESC-50,CC BY-NC 3.0,"2 000 clips, 50 clases, 5-fold",~0.6 GB,https://github.com/karolpiczak/ESC-50,Pieza de Unified-EV (generalización / OOD),True
-RecSIR / SynSIR (generado),Código pyroadacoustics (open); fuentes LSSiren/sireNNet + ruido SONYC/US8K,Paper: 24 000 × 2 s. Esta notebook: demo Doppler×SNR (no 24k),generado en sesión (cientos de clips),https://github.com/steDamiano/pyroadacoustics,"Efecto Doppler, SNR controlado (−10 a +10 dB)",True
-"FSD50K (opcional, Unified-EV)",CC BY 4.0 (clips Freesound con atribución),"~51 k clips, ~200 clases",~31 GB,https://doi.org/10.5281/zenodo.4060432,OOD extra; no se monta por defecto,False
