@@ -1,0 +1,5 @@
+# 4.1. Limpieza de Datos
+
+La limpieza de los datos tuvo como finalidad establecer un conjunto de observaciones válidas y trazables para las etapas posteriores de armonización, transformación e ingeniería de características. Debido a que los cuatro corpus presentaron diferencias en integridad, duplicación y estructura de captura, el procedimiento no consistió en una eliminación indiscriminada de archivos, sino en la aplicación de reglas diferenciadas según la naturaleza de cada caso. Los archivos originales almacenados en el entorno de entrada se conservaron sin modificaciones y las exclusiones se realizaron únicamente sobre el conjunto analítico derivado.
+
+La estrategia de limpieza consideró cinco componentes: eliminación de archivos inválidos, control de duplicados, tratamiento de dependencias multicanal, revisión de observaciones anómalas y consolidación de la metadata. Esta organización permite mantener la trazabilidad entre los datos originales y las unidades finalmente utilizadas en las etapas experimentales.
