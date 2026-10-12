@@ -1,0 +1,11 @@
+# 5.2. Justificación del Modelo Seleccionado
+
+ResNet18 se establece como candidata principal para los experimentos profundos, debido a que la representación Log-Mel conserva patrones locales de variación temporal y frecuencial que pueden ser procesados mediante convoluciones. Las conexiones residuales permiten estudiar una arquitectura más profunda que la CNN compacta de referencia, mientras que la inicialización visual proporciona una estrategia de transferencia que será evaluada en el dominio acústico.
+
+Esta decisión es metodológica y no equivale a una selección empírica del mejor modelo. El modelo que se integre en el prototipo se elegirá con información de desarrollo, según el criterio de selección definido en el capítulo de entrenamiento y considerando desempeño, falsos negativos, falsas alarmas y costo computacional. Su desempeño externo se medirá posteriormente con la configuración congelada.
+
+La preparación reporta 153 993 segmentos: 118 349 de entrenamiento, 29 280 de validación y 6 364 de evaluación externa. Las ventanas se solapan y varios canales corresponden a una misma toma; además, pueden existir variantes aumentadas de una misma grabación. Por ello, esas cantidades describen entradas de entrenamiento y no el número de observaciones estadísticamente independientes. La suficiencia de datos para una arquitectura profunda se examinará mediante curvas de aprendizaje, comportamiento de validación y análisis por grupos y corpus.
+
+El uso de transferencia visual responde al propósito de evitar preentrenamiento específicamente sobre AudioSet, pero su utilidad deberá demostrarse experimentalmente. Los resultados de modelos acústicos preentrenados de la literatura no se trasladan automáticamente a esta ResNet18. La comparación con los tres modelos tradicionales y la CNN compacta permitirá evaluar si la candidata principal aporta una ventaja bajo las representaciones y condiciones del proyecto.
+
+La secuencia metodológica prevista es: audio preparado → segmento de tres segundos → Log-Mel → ResNet18 adaptada → puntuación de emergencia → decisión binaria mediante un umbral definido con datos de desarrollo. La especificación concreta de pesos y adaptación se cerrará antes del entrenamiento.
