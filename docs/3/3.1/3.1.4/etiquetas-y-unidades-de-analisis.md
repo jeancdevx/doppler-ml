@@ -1,0 +1,9 @@
+# 3.1.4. Etiquetas y unidades de análisis
+
+Debido a las diferencias entre los sistemas de etiquetado, las categorías fueron conservadas utilizando la nomenclatura de cada fuente. Esto evita establecer equivalencias que no estén respaldadas por la información original. Particularmente, las etiquetas ambulance, firetruck y police de sireNNet corresponden a las clases proporcionadas por ese dataset, mientras que Siren y Noise en A3Siren-Recordings describen los grupos observados en la estructura de las grabaciones.
+
+Esta distinción es especialmente relevante para AudioSet-EV v2. Sus archivos mantienen las etiquetas de origen asociadas a positive_labels, que contienen múltiples combinaciones de etiquetas de AudioSet. Por esta razón, durante esta etapa no se transformaron esas etiquetas en clases exclusivas de ambulancia, policía o bomberos.
+
+También se estableció una unidad de análisis específica para cada corpus. Para AudioSet-EV v2, LSSiren y sireNNet se utiliza el archivo como unidad primaria, mientras que en A3Siren-Recordings se utiliza el track. Esta decisión evita considerar los ocho canales de una misma toma como ocho observaciones independientes y será especialmente importante al establecer las particiones experimentales posteriores.
+
+El archivo se utiliza como unidad primaria de inventario en AudioSet-EV v2, LSSiren y sireNNet, mientras que en A3Siren-Recordings se utiliza el track para representar una toma. Esta organización no garantiza por sí sola independencia estadística. En sireNNet, la versión publicada incluye datos aumentados que pueden proceder de una misma grabación original. En AudioSet-EV v2, diferentes clips podrían compartir un video de procedencia. Cuando estas relaciones puedan identificarse, la unidad de partición deberá ampliarse al grupo de origen y conservar conjuntamente todos sus derivados. Cuando no pueda recuperarse la procedencia, esa incertidumbre se registrará como limitación.
