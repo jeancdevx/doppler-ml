@@ -1,0 +1,9 @@
+# 1. Resumen Ejecutivo
+
+El reconocimiento acústico de sirenas de vehículos de emergencia puede complementar la percepción de los sistemas vehiculares cuando el ruido urbano, la distancia, el movimiento relativo y las condiciones de captura dificultan la identificación de una señal de advertencia. En este contexto, el proyecto desarrolla un prototipo de aprendizaje supervisado para distinguir segmentos de audio asociados a sirenas de emergencia de segmentos pertenecientes a sonidos no objetivo. Su aplicación se plantea como un componente de percepción acústica con potencial de integración futura en vehículos autónomos y sistemas de asistencia a la conducción.
+
+El experimento principal se define como una clasificación binaria entre EMERGENCY y NON_EMERGENCY. Para su desarrollo se incorporaron AudioSet-EV v2, sireNNet y A3Siren-Recordings; LSSiren se reservó para la evaluación predictiva externa. La preparación reportada establece una frecuencia de muestreo de 16 kHz, una representación mono para la clasificación, normalización de amplitud por pico y ventanas de tres segundos con desplazamiento de 1,5 segundos. Cada segmento se representa mediante un vector de 21 características acústicas y un espectrograma Log-Mel de 64 bandas.
+
+Se compararán cinco modelos: regresión logística, Random Forest, SVM, una CNN compacta entrenada desde cero y una ResNet18 con transferencia desde un dominio visual y posterior ajuste fino. La comparación conservará las mismas particiones y reglas de evaluación, evitando distribuir entre entrenamiento y validación las ventanas o canales pertenecientes a un mismo grupo de origen identificado.
+
+El desempeño se analizará mediante accuracy, precisión de la clase positiva, recall de emergencia, F1 macro, tasa de falsos positivos y métricas basadas en puntuaciones de decisión. También se evaluarán la transferencia entre corpus, la sensibilidad frente a perturbaciones acústicas y el costo computacional.
