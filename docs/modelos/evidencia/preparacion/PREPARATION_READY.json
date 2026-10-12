@@ -1,0 +1,11 @@
+{
+  "status": "READY",
+  "config_sha256": "99ce56b293aa68b45200ecd833b58da177d6391d4834d79cc8d7328b3a0cfba3",
+  "file_split_sha256": "59b34975f30f52ad8725ae116957c2079501d2de9321a68c72999bef363b19f7",
+  "files": 32204,
+  "segments": 153993,
+  "schema_version": "doppler-prepared-v3",
+  "features_scaled": false,
+  "representation_layout": "split_arrays",
+  "external_evaluated": false
+}

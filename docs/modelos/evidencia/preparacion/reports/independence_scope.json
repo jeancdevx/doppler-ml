@@ -1,0 +1,14 @@
+{
+  "controls": [
+    "SHA256",
+    "A3 track",
+    "source_video_id when recovered",
+    "explicit original_recording/augmentation_parent"
+  ],
+  "limitations": [
+    "No perceptual duplicate search. SHA256 does not identify re-encoded audio.",
+    "Upstream sireNNet augmentations without parent metadata may remain dependent.",
+    "Labels inherited from clips/tracks are weak at window level."
+  ],
+  "sirennet_files_without_parent": 1667
+}

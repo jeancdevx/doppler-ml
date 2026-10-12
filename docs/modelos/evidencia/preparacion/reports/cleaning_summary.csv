@@ -1,0 +1,9 @@
+dataset,action,files
+A3Siren-Recordings,keep,104
+AudioSet-EV v2,exclude_exact_duplicate,20
+AudioSet-EV v2,exclude_invalid_audio,2
+AudioSet-EV v2,keep,28794
+LSSiren,exclude_exact_duplicate,141
+LSSiren,keep,1693
+sireNNet,exclude_exact_duplicate,8
+sireNNet,keep,1667

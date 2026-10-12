@@ -1,0 +1,8 @@
+dataset,split,segments,padded_segments,valid_audio_seconds
+A3Siren-Recordings,train,2504,0,7512.0
+A3Siren-Recordings,validation,352,0,1056.0
+AudioSet-EV v2,train,114476,0,343428.0
+AudioSet-EV v2,validation,28630,0,85890.0
+LSSiren,generalization,6364,0,19092.0
+sireNNet,train,1334,0,4002.0
+sireNNet,validation,333,0,999.0

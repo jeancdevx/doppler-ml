@@ -1,0 +1,12 @@
+{
+  "rms": "sqrt(mean(samples**2)); ventana completa sin relleno",
+  "zcr": "mean librosa.feature.zero_crossing_rate, frame=2048 hop=512",
+  "dominant_frequency_hz": "argmax of mean STFT magnitude; DC forced to zero",
+  "spectral_centroid": "mean_time(sum_f f*|STFT| / sum_f |STFT|), Hz",
+  "spectral_bandwidth": "mean_time(sqrt(sum_f (f-centroid)**2*|STFT| / sum_f |STFT|)), Hz",
+  "spectral_rolloff": "mean_time frequency enclosing 85.0% summed magnitude, Hz",
+  "spectral_flux": "mean time L2 norm of signed differences of L1-normalized magnitude; magnitud normalizada por trama",
+  "spectral_flatness": "mean_time geometric_mean(power floored 1e-12)/arithmetic_mean(power floored denominator 1e-12)",
+  "mfcc_1_to_13": "mean_time of DCT-II ortho on logmel, coefficient orders 0..12; positional names 1..13",
+  "logmel": "Slaney scale+area normalization; Hann periodic; rFFT unnormalized; center=True constant; power=2; logmel ref=max, MFCC ref=1; floor=1e-10; top_db=80.0 per segment"
+}

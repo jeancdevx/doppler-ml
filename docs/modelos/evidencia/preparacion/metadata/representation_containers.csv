@@ -1,0 +1,4 @@
+split,representation_path,representation_sha256,segments,rows,cols,dtype
+generalization,representations/logmel/generalization.npy,fe81ae3f2d72e842e17bcfee40e077f317aec3c83deb57f10dc98d55b55d48ba,6364,64,94,float32
+train,representations/logmel/train.npy,143a163a2d9b9db92a4b1b5a356f24f9705f64e56068198f43c4bff1dfa83cdd,118314,64,94,float32
+validation,representations/logmel/validation.npy,6bfe16bf6a89087b006d494dae076ed8b0dfac71c70fd609bec3e1b24c50a4ef,29315,64,94,float32

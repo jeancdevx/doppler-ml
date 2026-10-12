@@ -1,0 +1,20 @@
+check,passed,details
+unique_segment_id,True,
+no_invalid_sources,True,
+no_group_cross_split,True,
+no_hash_cross_split,True,
+no_file_cross_split,True,
+no_a3_track_cross_split,True,
+only_LSSiren_external,True,
+labels_binary,True,
+window_duration,True,
+acoustic_alignment,True,
+acoustic_finite,True,
+mfcc_alignment,True,
+mfcc_finite,True,
+representation_alignment,True,
+representation_shapes,True,
+representation_files_exist,True,
+representation_row_unique,True,
+scaler_not_fitted,True,Sin escalador global; lo ajusta cada modelo dentro del fold.
+output_separate_from_source_roots,True,Rutas de escritura separadas de originales.

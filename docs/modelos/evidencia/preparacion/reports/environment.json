@@ -1,0 +1,18 @@
+{
+  "python": "3.13.15 (main, Aug  6 2026, 11:06:22) [GCC 13.3.0]",
+  "platform": "Linux-6.18.48+-x86_64-with-glibc2.39",
+  "packages": {
+    "numpy": "2.1.3",
+    "pandas": "2.3.3",
+    "scipy": "1.16.3",
+    "scikit-learn": "1.6.1",
+    "soundfile": "0.14.0",
+    "threadpoolctl": "3.6.0",
+    "librosa": "0.11.0"
+  },
+  "cpu_count": 4,
+  "workers": 2,
+  "audio_reader": "soundfile",
+  "disk_free_gib": 19.5023193359375,
+  "timestamp_utc": "2026-10-12T05:14:17.189832+00:00"
+}

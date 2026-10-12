@@ -1,0 +1,8 @@
+{
+  "seed": 42,
+  "method": "seeded stratified known-group shuffle per corpus-class composition",
+  "validation_fraction": 0.2,
+  "holdout": "LSSiren",
+  "file_split_sha256": "59b34975f30f52ad8725ae116957c2079501d2de9321a68c72999bef363b19f7",
+  "fitted_scaler": false
+}
