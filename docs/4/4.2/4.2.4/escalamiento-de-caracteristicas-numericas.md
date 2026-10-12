@@ -1,0 +1,9 @@
+# 4.2.4. Escalamiento de características numéricas
+
+Una vez armonizadas las señales y obtenidas las características acústicas, fue necesario llevar las variables numéricas a una escala comparable. Esta necesidad resulta especialmente relevante porque las características empleadas presentan órdenes de magnitud diferentes; por ejemplo, RMS y ZCR se expresan en escalas próximas a la unidad, mientras que la frecuencia dominante, el centroide, el ancho de banda y el roll-off se expresan en hertz, y los coeficientes MFCC poseen distribuciones y magnitudes distintas.
+
+La matriz preparada contiene 21 características numéricas, correspondientes a RMS, ZCR, frecuencia dominante, centroide espectral, ancho de banda, roll-off, flujo espectral, flatness y los 13 coeficientes MFCC. La estandarización se realizó utilizando la media y la desviación estándar calculadas exclusivamente sobre las observaciones pertenecientes al conjunto de entrenamiento.
+
+El ajuste del escalamiento se realizó sobre 118 349 filas de entrenamiento, y los parámetros obtenidos fueron almacenados en scaler_train.json. Entre las variables consideradas, por ejemplo, el RMS presentó una media de 0,1835 y una desviación estándar de 0,1022, mientras que el centroide espectral presentó una media de aproximadamente 1810,95 Hz y una desviación estándar de 659,88 Hz. Estos parámetros constituyen la referencia utilizada para transformar posteriormente las observaciones de validación y del corpus de generalización.
+
+El escalador reportado se ajustó con las 118 349 filas de la partición fija de entrenamiento y se almacenó en scaler_train.json. Ese ajuste es aplicable a la validación fija y a LSSiren cuando ambos se transforman sin recalcular parámetros. Para la validación cruzada, cada fold deberá utilizar un escalador ajustado exclusivamente con su subconjunto de entrenamiento; reutilizar el escalador global permitiría que el fold de validación influyera en sus parámetros.
