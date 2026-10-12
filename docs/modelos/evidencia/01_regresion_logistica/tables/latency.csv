@@ -1,0 +1,2 @@
+scope,warmup,repetitions,p50_ms,p95_ms,batch_n,batch_seconds,batch_segments_per_second,process_peak_rss_mib,model_file_mib
+CPU; one precomputed feature vector; includes pipeline scaling,20,100,0.45951250001508015,0.6204725499770802,2048,0.0009105839999961063,2249106.068203216,748.48046875,0.0014619827270507812

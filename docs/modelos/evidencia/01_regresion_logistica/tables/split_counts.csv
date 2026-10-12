@@ -1,0 +1,15 @@
+split,dataset,canonical_label,segments,files,known_groups
+generalization,LSSiren,EMERGENCY,2888,894,894
+generalization,LSSiren,NON_EMERGENCY,3476,766,766
+train,A3Siren-Recordings,EMERGENCY,944,48,6
+train,A3Siren-Recordings,NON_EMERGENCY,1560,40,5
+train,AudioSet-EV v2,EMERGENCY,31333,6312,6312
+train,AudioSet-EV v2,NON_EMERGENCY,83143,16706,16706
+train,sireNNet,EMERGENCY,997,997,997
+train,sireNNet,NON_EMERGENCY,337,337,337
+validation,A3Siren-Recordings,EMERGENCY,40,8,1
+validation,A3Siren-Recordings,NON_EMERGENCY,312,8,1
+validation,AudioSet-EV v2,EMERGENCY,7848,1578,1578
+validation,AudioSet-EV v2,NON_EMERGENCY,20782,4177,4177
+validation,sireNNet,EMERGENCY,249,249,249
+validation,sireNNet,NON_EMERGENCY,84,84,84

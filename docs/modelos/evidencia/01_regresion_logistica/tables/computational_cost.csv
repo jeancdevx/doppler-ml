@@ -1,0 +1,7 @@
+phase,seconds
+descubrimiento_insumos,20.324825868000005
+verificacion_hashes_publicados,2.5877120559999867
+lectura_y_auditoria_metadata,10.462912784000025
+busqueda_cv,9.573315112999978
+ajuste_final_train,0.9397171749999984
+prediccion_validacion,0.019153425000013158
