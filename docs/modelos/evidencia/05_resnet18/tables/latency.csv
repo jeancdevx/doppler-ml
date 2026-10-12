@@ -1,0 +1,2 @@
+scope,batch_1_device,p50_ms,p95_ms,repetitions,global_throughput_batch,throughput_gpus,batch_segments_per_second,parameters,model_file_mib
+"forward on pre-normalized tensor resident on device; excludes disk, transfer and feature extraction",cuda,3.4019425002043135,3.577745849634084,100,128,2,2882.8835191944468,11177025,42.70643138885498

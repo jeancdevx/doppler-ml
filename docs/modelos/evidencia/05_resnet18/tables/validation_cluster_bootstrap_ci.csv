@@ -1,0 +1,5 @@
+metric,lower,upper,method,repeats,finite_repeats
+f1_macro,0.8769564805603051,0.9220222597576204,percentile bootstrap of known groups,500,500
+recall_emergency,0.806498415556491,0.8380898659203362,percentile bootstrap of known groups,500,500
+fpr,0.01760323442293452,0.06713190271829297,percentile bootstrap of known groups,500,500
+roc_auc,0.9489326605397431,0.9710468986079218,percentile bootstrap of known groups,500,500

@@ -1,0 +1,190 @@
+{
+  "model_sha256": "e0dc2eaa1415f66d7442a8db7cf249129520ece20d575df35dc0aefb29f89d2a",
+  "model_bytes": 44780939,
+  "oof_default": {
+    "n": 118314,
+    "tn": 80229,
+    "fp": 4811,
+    "fn": 4646,
+    "tp": 28628,
+    "accuracy": 0.9200686309312507,
+    "f1_macro": 0.9012931401840891,
+    "precision_emergency": 0.8561260803253686,
+    "recall_emergency": 0.8603714612009377,
+    "fpr": 0.05657337723424271,
+    "roc_auc": 0.9609495098241003,
+    "average_precision": 0.9367192977064616
+  },
+  "oof_selected": {
+    "n": 118314,
+    "tn": 82199,
+    "fp": 2841,
+    "fn": 5942,
+    "tp": 27332,
+    "accuracy": 0.9257653363084672,
+    "f1_macro": 0.9054268868928628,
+    "precision_emergency": 0.9058429721936831,
+    "recall_emergency": 0.8214221313938811,
+    "fpr": 0.033407808090310444,
+    "roc_auc": 0.9609495098241003,
+    "average_precision": 0.9367192977064616
+  },
+  "threshold_candidates": 12146,
+  "min_fpr_at_recall90": {
+    "threshold": 0.3201832473278045,
+    "recall_emergency": 0.9000120213980886,
+    "fpr": 0.1012464722483537,
+    "f1_macro": 0.8806918484305474
+  },
+  "max_recall_under_fpr10": {
+    "threshold": 0.324556440114975,
+    "recall_emergency": 0.8988699885796718,
+    "fpr": 0.0999529633113828,
+    "f1_macro": 0.8812732575620779
+  },
+  "cv_sizes": [
+    {
+      "validation_fold": 0,
+      "segments": 39200,
+      "positives": 11052,
+      "groups": 8099
+    },
+    {
+      "validation_fold": 1,
+      "segments": 40011,
+      "positives": 11065,
+      "groups": 8101
+    },
+    {
+      "validation_fold": 2,
+      "segments": 39103,
+      "positives": 11157,
+      "groups": 8163
+    }
+  ],
+  "state_entries": 122,
+  "state_elements": 11186645,
+  "inner_sizes": [
+    {
+      "outer_fold": 0,
+      "role": "early_stopping",
+      "segments": 15611,
+      "positives": 4254,
+      "groups": 3228
+    },
+    {
+      "outer_fold": 0,
+      "role": "fit",
+      "segments": 63503,
+      "positives": 17968,
+      "groups": 13036
+    },
+    {
+      "outer_fold": 0,
+      "role": "outer_validation",
+      "segments": 39200,
+      "positives": 11052,
+      "groups": 8099
+    },
+    {
+      "outer_fold": 1,
+      "role": "early_stopping",
+      "segments": 15672,
+      "positives": 4777,
+      "groups": 3228
+    },
+    {
+      "outer_fold": 1,
+      "role": "fit",
+      "segments": 62631,
+      "positives": 17432,
+      "groups": 13034
+    },
+    {
+      "outer_fold": 1,
+      "role": "outer_validation",
+      "segments": 40011,
+      "positives": 11065,
+      "groups": 8101
+    },
+    {
+      "outer_fold": 2,
+      "role": "early_stopping",
+      "segments": 15825,
+      "positives": 4225,
+      "groups": 3211
+    },
+    {
+      "outer_fold": 2,
+      "role": "fit",
+      "segments": 63386,
+      "positives": 17892,
+      "groups": 12989
+    },
+    {
+      "outer_fold": 2,
+      "role": "outer_validation",
+      "segments": 39103,
+      "positives": 11157,
+      "groups": 8163
+    }
+  ],
+  "epoch_summary": [
+    {
+      "run": "trial_0_fold_0",
+      "executed": 7,
+      "best_epoch": 4,
+      "best_stop_loss": 0.1838409000100341,
+      "best_stop_f1": 0.9218112090499492,
+      "seconds": 302.453845965
+    },
+    {
+      "run": "trial_0_fold_1",
+      "executed": 7,
+      "best_epoch": 4,
+      "best_stop_loss": 0.2211680526519877,
+      "best_stop_f1": 0.90139061949451,
+      "seconds": 283.87019419599994
+    },
+    {
+      "run": "trial_0_fold_2",
+      "executed": 7,
+      "best_epoch": 4,
+      "best_stop_loss": 0.2096379429675976,
+      "best_stop_f1": 0.8936625995158327,
+      "seconds": 288.78570014299976
+    },
+    {
+      "run": "trial_1_fold_0",
+      "executed": 7,
+      "best_epoch": 4,
+      "best_stop_loss": 0.1856981977852163,
+      "best_stop_f1": 0.9169875615013549,
+      "seconds": 296.5834647650004
+    },
+    {
+      "run": "trial_1_fold_1",
+      "executed": 6,
+      "best_epoch": 3,
+      "best_stop_loss": 0.231589030360863,
+      "best_stop_f1": 0.8943803770112702,
+      "seconds": 243.36409455399985
+    },
+    {
+      "run": "trial_1_fold_2",
+      "executed": 7,
+      "best_epoch": 4,
+      "best_stop_loss": 0.2356849043144242,
+      "best_stop_f1": 0.8889685891552878,
+      "seconds": 298.22022554800014
+    },
+    {
+      "run": "final_train",
+      "executed": 4,
+      "best_epoch": 4,
+      "best_stop_loss": null,
+      "best_stop_f1": null,
+      "seconds": 249.18872475299986
+    }
+  ]
+}
