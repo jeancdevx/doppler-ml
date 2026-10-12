@@ -1,0 +1,5 @@
+# 4.3. Transformaciones de Datos
+
+Una vez completadas las etapas de limpieza, armonización de frecuencia de muestreo, tratamiento de canales y normalización de amplitud, las señales fueron sometidas a un conjunto de transformaciones destinadas a convertir las grabaciones originales en unidades temporales y representaciones acústicas comparables. Esta etapa fue necesaria debido a las diferencias de duración identificadas entre los corpus, particularmente entre los segmentos de aproximadamente 3s de sireNNet, las grabaciones cercanas a 10s de AudioSet-EV v2, las duraciones variables de LSSiren y los tracks de mayor extensión de A3Siren-Recordings.
+
+El procedimiento comprendió la segmentación temporal, la definición de una configuración de ventaneo con solapamiento, la transformación mediante la Transformada de Fourier de Tiempo Corto (STFT), la proyección sobre la escala Mel y la generación de representaciones Log-Mel. Finalmente, se evaluó la posibilidad de aplicar aumento de datos, aunque esta estrategia no fue activada en la ejecución final.
