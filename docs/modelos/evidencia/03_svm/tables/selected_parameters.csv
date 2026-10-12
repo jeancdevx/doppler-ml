@@ -1,0 +1,5 @@
+parameter,value
+kernel,"""nystroem_rbf"""
+C,1.0
+gamma,0.047619047619047616
+n_components,256

@@ -1,0 +1,83 @@
+{
+  "protocol_version": "doppler-prepared-v3",
+  "seed": 42,
+  "output_root": "/kaggle/working/prepared_data_v3",
+  "resume": true,
+  "workers": 2,
+  "search_roots": [
+    "/kaggle/input"
+  ],
+  "datasets": {
+    "AudioSet-EV v2": {
+      "root": "/kaggle/input/datasets/jeancdevx/audioset-ev",
+      "slug": "audioset-ev",
+      "metadata_override": null
+    },
+    "LSSiren": {
+      "root": "/kaggle/input/datasets/jeancdevx/lssiren/lssiren",
+      "slug": "lssiren",
+      "metadata_override": null
+    },
+    "sireNNet": {
+      "root": "/kaggle/input/datasets/jeancdevx/sirennet/sireNNet",
+      "slug": "sirennet",
+      "metadata_override": null
+    },
+    "A3Siren-Recordings": {
+      "root": "/kaggle/input/datasets/jeancdevx/a3s-rec",
+      "slug": "a3s-rec",
+      "metadata_override": null
+    }
+  },
+  "extra_folder_labels": {},
+  "audioset_label_policy": "documented_folder_with_metadata_audit",
+  "a3_require_eight_channels": true,
+  "holdout_corpus": "LSSiren",
+  "sample_rate": 16000,
+  "window_seconds": 3.0,
+  "hop_seconds": 1.5,
+  "short_clip_policy": "drop_short_clip",
+  "long_tail_policy": "drop_incomplete_tail",
+  "channel_strategy": "mean_within_wav_preserve_A3_channels_as_separate_grouped_sources",
+  "amplitude_normalization": "peak_per_file",
+  "peak_target": 0.99,
+  "silence_peak": 1e-06,
+  "clipping_fraction": 0.01,
+  "n_fft": 2048,
+  "stft_hop": 512,
+  "n_mels": 64,
+  "fmin": 20.0,
+  "fmax": 8000.0,
+  "stft_window": "periodic_hann",
+  "stft_center": true,
+  "stft_pad_mode": "constant",
+  "mel_scale": "slaney",
+  "mel_normalization": "area_slaney",
+  "power": 2,
+  "db_reference": "segment_max",
+  "db_amin": 1e-10,
+  "top_db": 80.0,
+  "mfcc_orders": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "rolloff": 0.85,
+  "new_augmentation": false,
+  "global_feature_scaling": false,
+  "disk_reserve_gib": 2.0,
+  "make_full_zip": true,
+  "metadata_chunk_rows": 100000,
+  "validation_fraction": 0.2,
+  "heartbeat_seconds": 30
+}

@@ -1,0 +1,109 @@
+{
+  "seed": 42,
+  "prepared_root": null,
+  "search_roots": [
+    "/kaggle/input"
+  ],
+  "output_base": "/kaggle/working/entrenamiento",
+  "metadata_file": "metadata/metadata_segments.csv",
+  "file_metadata_file": null,
+  "preparation_config": "config/preparation_config.json",
+  "split_files": {
+    "train": "splits/train.csv",
+    "validation": "splits/validation.csv",
+    "generalization": "splits/generalization.csv"
+  },
+  "column_map": {},
+  "label_map": {
+    "NON_EMERGENCY": 0,
+    "EMERGENCY": 1
+  },
+  "dataset_aliases": {
+    "AudioSet-EV": "AudioSet-EV v2",
+    "audioset-ev": "AudioSet-EV v2",
+    "audioset_ev": "AudioSet-EV v2",
+    "sirennet": "sireNNet",
+    "SireNNet": "sireNNet",
+    "a3s-rec": "A3Siren-Recordings",
+    "A3Siren": "A3Siren-Recordings",
+    "lssiren": "LSSiren"
+  },
+  "development_corpora": [
+    "AudioSet-EV v2",
+    "sireNNet",
+    "A3Siren-Recordings"
+  ],
+  "holdout_corpus": "LSSiren",
+  "additional_group_columns": [
+    "source_video_id",
+    "original_recording_id",
+    "augmentation_parent_id"
+  ],
+  "require_original_group_column": null,
+  "cv_folds": 3,
+  "target_recall": 0.9,
+  "target_fpr": 0.1,
+  "bootstrap_repeats": 500,
+  "cpu_workers": 2,
+  "latency_warmup": 20,
+  "latency_repeats": 100,
+  "throughput_batch": 2048,
+  "feature_files": [
+    "features/acoustic_features.csv",
+    "features/mfcc_features.csv"
+  ],
+  "features_are_unscaled": true,
+  "feature_columns": [
+    "rms",
+    "zcr",
+    "dominant_frequency",
+    "spectral_centroid",
+    "spectral_bandwidth",
+    "spectral_rolloff",
+    "spectral_flux",
+    "spectral_flatness",
+    "mfcc_1",
+    "mfcc_2",
+    "mfcc_3",
+    "mfcc_4",
+    "mfcc_5",
+    "mfcc_6",
+    "mfcc_7",
+    "mfcc_8",
+    "mfcc_9",
+    "mfcc_10",
+    "mfcc_11",
+    "mfcc_12",
+    "mfcc_13"
+  ],
+  "feature_column_map": {
+    "dominant_frequency_hz": "dominant_frequency",
+    "spectral_centroid_hz": "spectral_centroid",
+    "spectral_bandwidth_hz": "spectral_bandwidth",
+    "spectral_rolloff_hz": "spectral_rolloff"
+  },
+  "max_iter": 20000,
+  "model_name": "03_svm",
+  "display_name": "SVM lineal y aproximación RBF",
+  "model_kind": "svm",
+  "candidates": [
+    {
+      "kernel": "linear",
+      "C": 0.1
+    },
+    {
+      "kernel": "linear",
+      "C": 1.0
+    },
+    {
+      "kernel": "nystroem_rbf",
+      "C": 1.0,
+      "gamma": 0.047619047619047616,
+      "n_components": 256
+    }
+  ],
+  "prepared_zip": null,
+  "prepared_cache": "/kaggle/working/prepared_cache",
+  "unzip_reserve_gib": 2.0,
+  "heartbeat_seconds": 30
+}
