@@ -1,0 +1,88 @@
+{
+  "model_sha256": "bd80122f8fc0b9655730b077ba64abf85972bdbea468bb036f2037508f6a2889",
+  "model_bytes": 90589703,
+  "oof_default": {
+    "n": 118314,
+    "tn": 77678,
+    "fp": 7362,
+    "fn": 9817,
+    "tp": 23457,
+    "accuracy": 0.854801629562013,
+    "f1_macro": 0.8161997030072226,
+    "precision_emergency": 0.7611213861578896,
+    "recall_emergency": 0.7049648374105909,
+    "fpr": 0.08657102539981186,
+    "roc_auc": 0.8983930170986576,
+    "average_precision": 0.8250329855095256
+  },
+  "oof_selected": {
+    "n": 118314,
+    "tn": 78072,
+    "fp": 6968,
+    "fn": 10069,
+    "tp": 23205,
+    "accuracy": 0.856001825650388,
+    "f1_macro": 0.8165499114190712,
+    "precision_emergency": 0.7690650581645843,
+    "recall_emergency": 0.6973913566147742,
+    "fpr": 0.0819379115710254,
+    "roc_auc": 0.8983930170986576,
+    "average_precision": 0.8250329855095256
+  },
+  "threshold_candidates": 117974,
+  "min_fpr_at_recall90": {
+    "threshold": 0.2288612251571681,
+    "recall_emergency": 0.9000120213980886,
+    "fpr": 0.3233066792097836,
+    "f1_macro": 0.7245075056502135
+  },
+  "max_recall_under_fpr10": {
+    "threshold": 0.4736806303669377,
+    "recall_emergency": 0.7272344773697181,
+    "fpr": 0.0999882408278457,
+    "f1_macro": 0.8152701926774298
+  },
+  "cv_sizes": [
+    {
+      "validation_fold": 0,
+      "segments": 39200,
+      "positives": 11052,
+      "groups": 8099
+    },
+    {
+      "validation_fold": 1,
+      "segments": 40011,
+      "positives": 11065,
+      "groups": 8101
+    },
+    {
+      "validation_fold": 2,
+      "segments": 39103,
+      "positives": 11157,
+      "groups": 8163
+    }
+  ],
+  "tree_summary": {
+    "depth": {
+      "min": 26,
+      "median": 29.0,
+      "mean": 29.926666666666666,
+      "max": 41,
+      "sum": 8978
+    },
+    "nodes": {
+      "min": 11105,
+      "median": 11551.0,
+      "mean": 11543.573333333334,
+      "max": 11905,
+      "sum": 3463072
+    },
+    "leaves": {
+      "min": 5553,
+      "median": 5776.0,
+      "mean": 5772.286666666667,
+      "max": 5953,
+      "sum": 1731686
+    }
+  }
+}

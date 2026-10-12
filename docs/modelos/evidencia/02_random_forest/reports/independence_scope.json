@@ -1,0 +1,8 @@
+{
+  "missing_optional_columns": [],
+  "limitations": [
+    "SHA-256 solo controla duplicados binarios; no certifica independencia acústica.",
+    "No se auditó similitud perceptual ni la verdad temporal de las etiquetas en esta notebook.",
+    "sireNNet ya incluye aumentos; revisar procedencia de sus grabaciones."
+  ]
+}

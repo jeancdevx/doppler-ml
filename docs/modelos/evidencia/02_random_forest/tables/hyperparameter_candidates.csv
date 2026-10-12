@@ -1,0 +1,4 @@
+trial,n_estimators,max_depth,min_samples_leaf,max_features
+0,300,20.0,2,sqrt
+1,300,,2,sqrt
+2,300,,5,sqrt
