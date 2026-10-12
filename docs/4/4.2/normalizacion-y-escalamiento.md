@@ -1,0 +1,5 @@
+# 4.2. Normalización y Escalamiento
+
+La etapa de normalización y escalamiento tuvo como finalidad reducir la heterogeneidad técnica existente entre los corpus y establecer una representación acústica común para las etapas posteriores de transformación e ingeniería de características. En el análisis exploratorio se había identificado que los datasets presentaban diferencias importantes en frecuencia de muestreo, número de canales y condiciones de captura, por lo que estas características debían ser armonizadas antes de construir las entradas destinadas al modelado.
+
+El procedimiento de esta etapa comprendió cuatro operaciones: armonización de la frecuencia de muestreo, armonización de canales, normalización de amplitud y escalamiento de las variables numéricas. Las transformaciones se aplicaron sobre copias derivadas de las señales, manteniendo sin modificaciones los archivos originales. De esta manera, la preparación conserva la trazabilidad entre el audio de origen y la representación finalmente utilizada en el experimento.
