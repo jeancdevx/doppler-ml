@@ -1,0 +1,5 @@
+# 3.4. Análisis de Variables Relevantes
+
+Una vez caracterizada la estructura de los corpus, se realizó el análisis de las variables acústicas con el propósito de identificar patrones descriptivos asociados a las señales de emergencia y a los grupos de referencia. El análisis comprendió variables temporales y energéticas, descriptores frecuenciales, representaciones tiempo-frecuencia y coeficientes cepstrales. Estas variables fueron estudiadas de manera independiente dentro de cada corpus, debido a las diferencias previamente identificadas en duración, frecuencia de muestreo, número de canales y condiciones de captura.
+
+El análisis se realizó sobre la muestra acústica definida en la Notebook 01 y refinada posteriormente en la Notebook 01.1. Para AudioSet-EV v2, LSSiren y sireNNet se utilizaron archivos individuales como unidades de análisis, mientras que A3Siren-Recordings se analizó considerando el track como unidad lógica, preservando la dependencia entre sus ocho canales. Los descriptores se calcularon sobre copias temporales de las señales en memoria, sin modificar los archivos originales.
