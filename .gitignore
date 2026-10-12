@@ -7,6 +7,8 @@ venv/
 .jupyter/
 data/raw/
 data/interim/
+data/results/
+data/models/
 *.wav
 *.mp3
 *.flac
