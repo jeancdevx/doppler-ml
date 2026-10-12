@@ -1,0 +1,15 @@
+# 2.4. Criterios de Éxito
+
+| **Dimensión**              | **Indicador**                                                                                   | **Umbral de aceptación**                   | **Método de verificación**                                                             |
+|----------------------------|-------------------------------------------------------------------------------------------------|--------------------------------------------|----------------------------------------------------------------------------------------|
+| Clasificación binaria      | Accuracy                                                                                        | $\geq \ 0,95$                              | Evaluación final en los segmentos elegibles de LSSiren                                 |
+| Sensibilidad               | *Recall de EMERGENCY = TP/(TP + FN)*                                                            | $\geq \ 0,98$                              | Matriz de confusión con EMERGENCY como clase positiva                                  |
+| Equilibrio entre clases    | F1 macro de EMERGENCY y NON_EMERGENCY                                                           | $\geq \ 0,95$                              | Media no ponderada de los F1 de las dos clases                                         |
+| Falsas alarmas             | *FPR = FP/(FP + TN)*                                                                            | $< \ 0,05$                                 | Predicciones sobre segmentos NON_EMERGENCY                                             |
+| Robustez                   | F1 macro bajo ruido añadido                                                                     | $\geq \ 0,90$                              | Evaluación de copias perturbadas con modelo y umbral congelados                        |
+| Degradación                | F1 macro de referencia − F1 macro perturbado                                                    | $\leq \ 0,10$                              | Comparación de los mismos segmentos antes y después de la perturbación                 |
+| Transferencia entre corpus | F1 macro externo/F1 macro de validación interna                                                 | $\geq \ 0,90$                              | Comparación descriptiva entre validación fija y LSSiren                                |
+| Costo de inferencia        | Percentil 95 del tiempo de ejecución del modelo por segmento, con batch de inferencia igual a 1 | $< \ 200\ ms$                              | Medición repetida en el hardware documentado después del calentamiento                 |
+| Reproducibilidad           | Disponibilidad de configuración, particiones, versiones, pesos y registros                      | Todos los elementos requeridos disponibles | Reejecución del procedimiento y comparación de resultados con tolerancias documentadas |
+
+<span id="_Toc242396246" class="anchor"></span>Tabla 6. Criterios de éxito del sistema
