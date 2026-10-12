@@ -1,0 +1,9 @@
+# 4.5.1. Unidad de partición
+
+La preparación reportada asignó las particiones por archivo en AudioSet-EV v2 y sireNNet, y por track en A3Siren-Recordings. LSSiren se reservó íntegramente como fuente para la evaluación predictiva externa después de aplicar las reglas de elegibilidad. La asignación se propagó a todas las ventanas y, en A3Siren, a los ocho canales de una misma toma.
+
+Estas unidades representan grupos identificados en el pipeline, pero su independencia debe examinarse según la procedencia. Cuando varios archivos correspondan a variantes de una grabación original o clips de un mismo video, deberán integrarse en un grupo común antes de congelar las particiones definitivas. La partición existente se verificará bajo esa condición. La imposibilidad de reconstruir algunos grupos, particularmente en datos previamente aumentados, se declarará como limitación y podrá estudiarse mediante análisis complementarios.
+
+La etiqueta canónica del experimento binario se define conforme al corpus de origen. En sireNNet, ambulance, firetruck y police se agrupan como EMERGENCY y traffic como NON_EMERGENCY. En A3Siren-Recordings, Siren se corresponde con EMERGENCY y Noise con NON_EMERGENCY. En LSSiren, el grupo de sirenas denominado Ambulance se asigna a EMERGENCY y Road a NON_EMERGENCY; esa correspondencia no se utiliza para afirmar una clasificación validada por tipo de vehículo.
+
+En AudioSet-EV v2, la regla implementada deberá recuperarse del código y de la metadata para confirmar si Positive_files y Negative_files determinan directamente la etiqueta binaria o si se aplica una selección basada en la ontología. El nombre de la carpeta, la cantidad de cadenas distintas de positive_labels y la presencia de etiquetas múltiples no sustituyen esa regla. Los casos ambiguos o contradictorios deberán conservar una decisión registrada de inclusión, exclusión o revisión antes de entrenar.
