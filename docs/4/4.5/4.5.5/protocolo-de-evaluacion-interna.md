@@ -1,0 +1,5 @@
+# 4.5.5. Protocolo de evaluación interna
+
+El desarrollo utilizará el entrenamiento y la validación fija de AudioSet-EV v2, sireNNet y A3Siren-Recordings. La selección mediante validación cruzada se realizará dentro de entrenamiento con grupos de origen, de modo que todas las ventanas y canales del mismo grupo se mantengan juntos. Cada fold tendrá su propio ajuste de transformaciones aprendidas. El número de folds y el presupuesto de búsqueda se documentarán en el capítulo de entrenamiento, después de verificar su factibilidad.
+
+La validación fija se conservará para confirmar y cerrar decisiones de desarrollo. Si se utiliza para elegir el umbral de decisión, ese uso se declarará y sus métricas se interpretarán como resultados de desarrollo. Los cinco modelos compartirán las mismas particiones y la misma definición de métricas, aunque sus representaciones y estrategias de optimización sean diferentes. Se informarán resultados globales y por corpus, evitando que el mayor volumen de AudioSet-EV o el número de ventanas de una grabación oculten el comportamiento de las fuentes pequeñas.
