@@ -1,0 +1,9 @@
+# 3.5.3. Diferenciación acústica parcial entre los grupos observados
+
+El tercer hallazgo se relaciona con las diferencias observadas en los descriptores acústicos. Durante el EDA se identificaron diferencias entre varios grupos en variables como RMS y centroide espectral, pero estas diferencias estuvieron acompañadas por distintos grados de solapamiento. Esto indica que las variables individuales contienen información diferenciadora, aunque su comportamiento no es uniforme entre clases o corpus.
+
+En AudioSet-EV v2, por ejemplo, la mediana de RMS fue 0,1467 para Positive_files y 0,1040 para Negative_files, con un solapamiento de los intervalos intercuartílicos estimado en 0,51. En LSSiren, Ambulance presentó una mediana de RMS de 0,2040, frente a 0,0650 para Road; en este caso, el análisis de la muestra mostró una diferenciación más marcada en los intervalos intercuartílicos. Para el centroide espectral de LSSiren se observaron medianas de 1783,14 Hz para Ambulance y 2082,67 Hz para Road, con un solapamiento intercuartílico de 0,38.
+
+En sireNNet también se observaron diferentes grados de solapamiento al comparar las cuatro categorías. El centroide espectral presentó diferenciación parcial entre ambulance y firetruck, así como entre firetruck y police, mientras que la comparación entre ambulance y police mostró un solapamiento considerable. Las restantes comparaciones presentaron distintos grados de diferenciación y solapamiento.
+
+En conjunto, estos resultados indican que una variable acústica aislada no constituye una regla suficiente para representar las categorías observadas. En consecuencia, para las etapas posteriores deberá evaluarse una representación que combine información temporal, energética, frecuencial y/o tiempo-frecuencia. Esta conclusión es una implicación metodológica del EDA y no una selección definitiva de características.
