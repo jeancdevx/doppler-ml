@@ -1,0 +1,5 @@
+{
+  "label": "any positive segment",
+  "score": "maximum segment score",
+  "limitation": "Grupos largos tienen más oportunidades de falsa alarma; no es evaluación temporal por evento."
+}

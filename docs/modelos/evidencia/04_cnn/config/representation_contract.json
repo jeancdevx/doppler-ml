@@ -1,0 +1,10 @@
+{
+  "shape": [
+    64,
+    94
+  ],
+  "dtype": "float32",
+  "layout": "split_arrays",
+  "policy": "Log-Mel numérico preparado; normalización por banda ajustada por subconjunto",
+  "resnet_input": "Tres canales repetidos, forma nativa, sin mapa RGB ni recorte ImageNet"
+}

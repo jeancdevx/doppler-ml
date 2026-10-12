@@ -1,0 +1,90 @@
+{
+  "seed": 42,
+  "prepared_root": null,
+  "search_roots": [
+    "/kaggle/input"
+  ],
+  "output_base": "/kaggle/working/entrenamiento",
+  "metadata_file": "metadata/metadata_segments.csv",
+  "file_metadata_file": null,
+  "preparation_config": "config/preparation_config.json",
+  "split_files": {
+    "train": "splits/train.csv",
+    "validation": "splits/validation.csv",
+    "generalization": "splits/generalization.csv"
+  },
+  "column_map": {},
+  "label_map": {
+    "NON_EMERGENCY": 0,
+    "EMERGENCY": 1
+  },
+  "dataset_aliases": {
+    "AudioSet-EV": "AudioSet-EV v2",
+    "audioset-ev": "AudioSet-EV v2",
+    "audioset_ev": "AudioSet-EV v2",
+    "sirennet": "sireNNet",
+    "SireNNet": "sireNNet",
+    "a3s-rec": "A3Siren-Recordings",
+    "A3Siren": "A3Siren-Recordings",
+    "lssiren": "LSSiren"
+  },
+  "development_corpora": [
+    "AudioSet-EV v2",
+    "sireNNet",
+    "A3Siren-Recordings"
+  ],
+  "holdout_corpus": "LSSiren",
+  "additional_group_columns": [
+    "source_video_id",
+    "original_recording_id",
+    "augmentation_parent_id"
+  ],
+  "require_original_group_column": null,
+  "cv_folds": 3,
+  "target_recall": 0.9,
+  "target_fpr": 0.1,
+  "bootstrap_repeats": 500,
+  "cpu_workers": 2,
+  "latency_warmup": 20,
+  "latency_repeats": 100,
+  "throughput_batch": 2048,
+  "allow_cpu": false,
+  "max_gpus": 2,
+  "batch_size": 64,
+  "loader_workers": 0,
+  "amp": true,
+  "representation_manifest": "metadata/representation_manifest.csv",
+  "representation_template": null,
+  "path_prefix_map": {},
+  "npz_key": "logmel",
+  "transpose_logmel": false,
+  "n_mels": 64,
+  "disk_reserve_gib": 2,
+  "normalization_chunk": 256,
+  "max_epochs": 15,
+  "patience": 3,
+  "early_stop_min_delta": 0.0001,
+  "inner_stop_folds": 5,
+  "gradient_clip": 5.0,
+  "model_name": "04_cnn",
+  "display_name": "CNN compacta desde cero",
+  "model_kind": "cnn",
+  "candidates": [
+    {
+      "lr": 0.001,
+      "weight_decay": 0.0001,
+      "dropout": 0.3
+    },
+    {
+      "lr": 0.0003,
+      "weight_decay": 0.001,
+      "dropout": 0.5
+    }
+  ],
+  "prepared_zip": null,
+  "prepared_cache": "/kaggle/working/prepared_cache",
+  "unzip_reserve_gib": 2.0,
+  "heartbeat_seconds": 30,
+  "tensorboard": true,
+  "batch_log_every": 100
+}

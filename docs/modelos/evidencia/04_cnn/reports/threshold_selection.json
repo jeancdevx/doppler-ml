@@ -1,0 +1,8 @@
+{
+  "threshold": 0.5282900333404541,
+  "feasible_on_training_oof": false,
+  "target_recall": 0.9,
+  "target_fpr_strictly_less_than": 0.1,
+  "fallback": "maximum OOF macro F1 if constraints infeasible",
+  "scope": "training OOF, not independent performance"
+}

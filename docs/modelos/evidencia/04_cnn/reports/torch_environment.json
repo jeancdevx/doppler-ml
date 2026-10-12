@@ -1,0 +1,12 @@
+{
+  "torch": "2.11.0+cu128",
+  "cuda": "12.8",
+  "cudnn": 91900,
+  "used_gpus": 2,
+  "parallelism": "DataParallel",
+  "global_batch_size": 64,
+  "gpu_names": [
+    "Tesla T4",
+    "Tesla T4"
+  ]
+}
