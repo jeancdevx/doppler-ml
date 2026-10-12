@@ -2,6 +2,8 @@
 
 Cada punto conserva su texto propio; sus subpuntos se encuentran en los archivos enlazados. Las imágenes están en `img/` y las fórmulas utilizan notación LaTeX.
 
+Los [informes independientes de los cinco modelos entrenados](modelos/README.md) documentan las ejecuciones del 12 de octubre de 2026: preprocesamiento, particiones, folds, arquitectura, matemática, resultados, gráficas y artefactos. Incluyen [regresión logística](modelos/01_regresion_logistica.md), [Random Forest](modelos/02_random_forest.md), [SVM](modelos/03_svm.md), [CNN](modelos/04_cnn.md) y [ResNet18](modelos/05_resnet18.md), con evidencia exportada y límites de la evaluación interna.
+
 - [1. Resumen Ejecutivo](1/resumen-ejecutivo.md)
 - [2. Definición del Problema](2/definicion-del-problema.md)
   - [2.1. Contexto del Dominio](2/2.1/contexto-del-dominio.md)
